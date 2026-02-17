@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
-  if (!user) window.location.href = 'bienvenida.html';
+  if (!user) globalThis.location.href = 'bienvenida.html';
 });
 
 document.getElementById('logout-link').onclick = (e) => {
