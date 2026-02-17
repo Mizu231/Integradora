@@ -36,6 +36,6 @@ if (loginForm) {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    window.location.href = 'index.html';
+    globalThis.location.href = 'index.html';
   }
 });

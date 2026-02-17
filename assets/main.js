@@ -39,7 +39,7 @@ function hideAppScreens() {
   showScreen('login-screen');
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+globalThis.addEventListener('DOMContentLoaded', () => {
   // Navegación SPA
   document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', e => {
@@ -66,8 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
         await signInWithEmailAndPassword(auth, email, password);
         // El estado de auth cambiará y onAuthStateChanged se encargará
       } catch (err) {
-        errorDiv.textContent = 'Usuario o contraseña incorrectos';
-        errorDiv.style.display = 'block';
+
       }
     });
   }

@@ -4,5 +4,5 @@
 document.getElementById('login-form').addEventListener('submit', function (e) {
   e.preventDefault();
   // Aquí deberías validar con Firebase Auth
-  window.location.href = '/inicio';
+  globalThis.location.href = '/inicio';
 });
