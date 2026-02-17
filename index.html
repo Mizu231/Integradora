@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Acceso a Puertas</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Control de Acceso</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#login">Iniciar Sesión</a>
+      <a href="#panel">Panel de Control</a>
+      <a href="#historial">Historial</a>
+      <a href="#admin">Administración</a>
+    </nav>
+  </header>
+  <main>
+    <section id="inicio-screen" class="container screen" style="display:none">
+      <h2>Bienvenido al Sistema de Control de Acceso</h2>
+      <p>Gestione la seguridad y el acceso a sus puertas de manera eficiente y moderna.</p>
+      <img src="https://img.icons8.com/ios-filled/200/00ff00/lock-2.png" alt="Acceso"
+        style="background:#111;border-radius:50%;padding:1rem;">
+      <div style="max-width:500px;margin:2rem auto 0 auto;background:#181818;padding:2rem;border-radius:16px;">
+        <h3 style="text-align:center;">Aperturas Semanales</h3>
+        <canvas id="openingsChart" width="400" height="220"></canvas>
+      </div>
+    </section>
+    <section id="login-screen" class="container screen" style="display:none">
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" required>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required>
+        <button class="button" type="submit">Entrar</button>
+      </form>
+    </section>
+    <section id="panel-screen" class="container screen" style="display:none">
+      <h2>Panel de Control</h2>
+      <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+        <div>
+          <h3>Estado de la Puerta</h3>
+          <p id="door-status" class="status-closed">CERRADA</p>
+          <button class="button" onclick="toggleDoor()">Abrir/Cerrar Puerta</button>
+        </div>
+        <div>
+          <h3>Acciones Rápidas</h3>
+          <button class="button" onclick="showScreen('admin-screen')">Agregar Personal</button>
+          <button class="button" onclick="showScreen('historial-screen')">Ver Historial</button>
+        </div>
+      </div>
+    </section>
+    <section id="historial-screen" class="container screen" style="display:none">
+      <h2>Historial de Accesos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Usuario</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-02-16</td>
+            <td>08:15</td>
+            <td>Juan Pérez</td>
+            <td>Abrió Puerta</td>
+          </tr>
+          <tr>
+            <td>2026-02-16</td>
+            <td>08:20</td>
+            <td>María López</td>
+            <td>Cerró Puerta</td>
+          </tr>
+          <header id="main-header" style="display:none">
+            <h1 style="display:flex;align-items:center;gap:1rem;">
+              <img src="https://img.icons8.com/fluency/48/lock-2.png" alt="Logo Seguridad"
+                style="vertical-align:middle;"> Control de Acceso
+            </h1>
+            <nav>
+              <a href="#inicio">Inicio</a>
+              <a href="#panel">Panel de Control</a>
+              <a href="#historial">Historial</a>
+              <a href="#admin">Administración</a>
+              <a href="#logout" id="logout-link" style="float:right;color:#f55;font-weight:bold;">Cerrar Sesión</a>
+            </nav>
+          </header>
+          <option value="admin">Administrador</option>
+          <option value="user">Usuario</option>
+          </select>
+          <button class="button" type="submit">Agregar</button>
+          </form>
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Acceso</th>
+                <th>Acciones</th>
+                <section id="inicio-screen" class="container screen" style="display:none">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;">
+                    <div style="flex:1;min-width:260px;">
+                      <h2>Bienvenido al Sistema de Control de Acceso</h2>
+                      <p>Gestione la seguridad y el acceso a sus puertas de manera eficiente y moderna.</p>
+                      <ul style="margin:1.5rem 0 0 1.5rem;">
+                        <li>Monitoreo en tiempo real</li>
+                        <li>Historial de accesos</li>
+                        <li>Administración de personal</li>
+                        <li>Seguridad avanzada</li>
+                      </ul>
+                    </div>
+                    <div style="flex:1;min-width:260px;text-align:center;">
+                      <img src="https://img.icons8.com/ios-filled/200/00ff00/security-checked.png" alt="Seguridad"
+                        style="background:#111;border-radius:50%;padding:1rem;box-shadow:0 0 32px #0f08;">
+                      <div
+                        style="max-width:500px;margin:2rem auto 0 auto;background:#181818;padding:2rem;border-radius:16px;">
+                        <h3 style="text-align:center;">Aperturas Semanales</h3>
+                        <canvas id="openingsChart" width="400" height="220"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section id="login-screen" class="container screen"
+                  style="display:block;max-width:420px;box-shadow:0 0 32px #0f08;">
+                  <div style="text-align:center;">
+                    <img src="https://img.icons8.com/fluency/96/fingerprint-scan.png" alt="Login Seguridad"
+                      style="margin-bottom:1rem;">
+                  </div>
+                  <h2 style="text-align:center;">Iniciar Sesión</h2>
+                  <form id="login-form" autocomplete="off">
+                    <label for="usuario">Usuario</label>
+                    <input type="email" id="usuario" name="usuario" required placeholder="Correo electrónico">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="Contraseña">
+                    <button class="button" type="submit" style="width:100%;margin-top:1.2rem;">Entrar</button>
+                    <div id="login-error" style="color:#f55;font-weight:bold;margin-top:1rem;display:none;"></div>
+                  </form>
+                </section>
+                <td>María López</td>
+                <td>Usuario</td>
+                <td class="status-closed">Denegado</td>
+                <td><button class="button">Editar</button> <button class="button">Eliminar</button></td>
+              </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script type="module" src="assets/main.js"></script>
+</body>
+
+</html>

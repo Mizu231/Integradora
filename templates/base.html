@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Control de Acceso{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1 style="display:flex;align-items:center;gap:1rem;">
+      <img src="https://img.icons8.com/fluency/48/lock-2.png" alt="Logo Seguridad"> Control de Acceso
+    </h1>
+    <nav>
+      <a href="/inicio">Inicio</a>
+      <a href="/panel">Panel de Control</a>
+      <a href="/historial">Historial</a>
+      <a href="/admin">Administración</a>
+      <a href="/" id="logout-link" style="float:right;color:#f55;font-weight:bold;">Cerrar Sesión</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+
+</html>

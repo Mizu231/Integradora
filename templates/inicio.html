@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;">
+    <div style="flex:1;min-width:260px;">
+      <h2>Bienvenido al Sistema de Control de Acceso</h2>
+      <p>Gestione la seguridad y el acceso a sus puertas de manera eficiente y moderna.</p>
+      <ul style="margin:1.5rem 0 0 1.5rem;">
+        <li>Monitoreo en tiempo real</li>
+        <li>Historial de accesos</li>
+        <li>Administración de personal</li>
+        <li>Seguridad avanzada</li>
+      </ul>
+    </div>
+    <div style="flex:1;min-width:260px;text-align:center;">
+      <img src="https://img.icons8.com/ios-filled/200/00ff00/security-checked.png" alt="Seguridad"
+        style="background:#111;border-radius:50%;padding:1rem;box-shadow:0 0 32px #0f08;">
+      <div style="max-width:500px;margin:2rem auto 0 auto;background:#181818;padding:2rem;border-radius:16px;">
+        <h3 style="text-align:center;">Aperturas Semanales</h3>
+        <canvas id="openingsChart" width="400" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="module" src="/static/inicio.js"></script>
+{% endblock %}

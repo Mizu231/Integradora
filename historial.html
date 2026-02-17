@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de Accesos</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <header>
+    <h1 style="display:flex;align-items:center;gap:1rem;">
+      <img src="https://img.icons8.com/fluency/48/lock-2.png" alt="Logo Seguridad"> Control de Acceso
+    </h1>
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="panel.html">Panel de Control</a>
+      <a href="historial.html">Historial</a>
+      <a href="admin.html">Administración</a>
+      <a href="#" id="logout-link" style="float:right;color:#f55;font-weight:bold;">Cerrar Sesión</a>
+    </nav>
+  </header>
+  <main>
+    <section class="container">
+      <h2>Historial de Accesos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Usuario</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-02-16</td>
+            <td>08:15</td>
+            <td>Juan Pérez</td>
+            <td>Abrió Puerta</td>
+          </tr>
+          <tr>
+            <td>2026-02-16</td>
+            <td>08:20</td>
+            <td>María López</td>
+            <td>Cerró Puerta</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script type="module" src="assets/historial.js"></script>
+</body>
+
+</html>

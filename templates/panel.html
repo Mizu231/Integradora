@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container">
+  <h2>Panel de Control</h2>
+  <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+    <div>
+      <h3>Estado de la Puerta</h3>
+      <p id="door-status" class="status-closed">CERRADA</p>
+      <button class="button" id="toggle-door">Abrir/Cerrar Puerta</button>
+    </div>
+    <div>
+      <h3>Acciones Rápidas</h3>
+      <a class="button" href="/admin">Agregar Personal</a>
+      <a class="button" href="/historial">Ver Historial</a>
+    </div>
+  </div>
+</section>
+<script type="module" src="/static/panel.js"></script>
+{% endblock %}

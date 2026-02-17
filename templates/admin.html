@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container">
+  <h2>Administración de Personal</h2>
+  <form style="margin-bottom:2rem;">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <label for="rol">Rol</label>
+    <select id="rol" name="rol">
+      <option value="admin">Administrador</option>
+      <option value="user">Usuario</option>
+    </select>
+    <button class="button" type="submit">Agregar</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Rol</th>
+        <th>Acceso</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Juan Pérez</td>
+        <td>Administrador</td>
+        <td class="status-open">Permitido</td>
+        <td><button class="button">Editar</button> <button class="button">Eliminar</button></td>
+      </tr>
+      <tr>
+        <td>María López</td>
+        <td>Usuario</td>
+        <td class="status-closed">Denegado</td>
+        <td><button class="button">Editar</button> <button class="button">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<script type="module" src="/static/admin.js"></script>
+{% endblock %}

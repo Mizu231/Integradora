@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container">
+  <h2>Historial de Accesos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Usuario</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2026-02-16</td>
+        <td>08:15</td>
+        <td>Juan Pérez</td>
+        <td>Abrió Puerta</td>
+      </tr>
+      <tr>
+        <td>2026-02-16</td>
+        <td>08:20</td>
+        <td>María López</td>
+        <td>Cerró Puerta</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<script type="module" src="/static/historial.js"></script>
+{% endblock %}
